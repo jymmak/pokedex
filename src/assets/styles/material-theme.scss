@@ -1,0 +1,185 @@
+$color_prymary_50 : #F5E0E2; 
+$color_prymary_100 : #E6B3B6; 
+$color_prymary_200 : #D58086; 
+$color_prymary_300 : #C44D56; 
+$color_prymary_400 : #B82631; 
+$color_prymary_500 : #AB000D; 
+$color_prymary_600 : #A4000B; 
+$color_prymary_700 : #9A0009; 
+$color_prymary_800 : #910007; 
+$color_prymary_900 : #800003; 
+$mat-iron-black: (
+   50: $color_prymary_50,
+  100: $color_prymary_100,
+  200: $color_prymary_200,
+  300: $color_prymary_300,
+  400: $color_prymary_400,
+  500: $color_prymary_500,
+  600: $color_prymary_600,
+  700: $color_prymary_700,
+  800: $color_prymary_800,
+  900: $color_prymary_900,
+  A100: #FFADAD,
+  A200: #FF7A7A,
+  A400: #FF4747,
+  A700: #FF2E2E,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $white-87-opacity,
+    400: $white-87-opacity,
+    500: $white-87-opacity,
+    600: $white-87-opacity,
+    700: $white-87-opacity,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $white-87-opacity,
+    A200: $white-87-opacity,
+    A400: $white-87-opacity,
+    A700: $white-87-opacity,
+  )
+);
+ 
+$mat-iron-accent: (
+  50: #f9fafb,
+  100: #ccd7dc,
+  200: #abbcc5,
+  300: #819ba8,
+  400: #6e8d9b,
+  500: #607d8b,
+  600: #536d79,
+  700: #475c67,
+  800: #3a4c55,
+  900: #2e3c43,
+  A100: #f9fafb,
+  A200: #ccd7dc,
+  A400: #6e8d9b,
+  A700: #475c67,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: $white-87-opacity,
+    600: $white-87-opacity,
+    700: $white-87-opacity,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: $black-87-opacity,
+    A400: $black-87-opacity,
+    A700: $white-87-opacity,
+  )
+);
+ 
+$mat-iron-warning: (
+  50: #ffffff,
+  100: #fceae8,
+  200: #f6bcb6,
+  300: #ef8177,
+  400: #eb675b,
+  500: #e84e40,
+  600: #e53525,
+  700: #d22919,
+  800: #b62316,
+  900: #9b1e13,
+  A100: #ffffff,
+  A200: #fceae8,
+  A400: #eb675b,
+  A700: #d22919,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: $white-87-opacity,
+    600: $white-87-opacity,
+    700: $white-87-opacity,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: $black-87-opacity,
+    A400: $black-87-opacity,
+    A700: $white-87-opacity,
+  )
+);
+
+@include mat-core();
+ 
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue.
+$iron-app-primary: mat-palette($mat-iron-black, 500, A100, A400);
+$iron-app-accent:  mat-palette($mat-iron-accent, 500, A100, A400);
+$iron-app-warn:  mat-palette($mat-iron-warning, 500, A100, A400);
+ 
+// The warn palette is optional (defaults to red).
+$iron-app-theme:  mat-light-theme($iron-app-primary, $iron-app-accent,$iron-app-warn);
+// $iron-app-theme2:  mat-light-theme($iron-app-warn, $iron-app-primary);
+// $iron-app-theme3:  mat-light-theme($iron-app-accent, $iron-app-primary);
+// $iron-app-theme3:  mat-light-theme($iron-app-primary, $iron-app-accent);
+ 
+// Create the theme object (a scss map containing all of the palettes).
+// $iron-app-theme: mat-light-theme($iron-app-warn, $iron-app-primary, $iron-app-accent);
+// $iron-app-theme: mat-light-theme($iron-app-primary, $iron-app-accent, $iron-app-warn);
+// @include angular-material-theme($iron-app-theme3);
+// @include mat-core-theme($iron-app-theme);
+  @include mat-autocomplete-theme($iron-app-theme);
+  @include mat-badge-theme($iron-app-theme);
+  @include mat-bottom-sheet-theme($iron-app-theme);
+  @include mat-button-theme($iron-app-theme);
+  @include mat-button-toggle-theme($iron-app-theme);
+  @include mat-card-theme($iron-app-theme);
+  @include mat-checkbox-theme($iron-app-theme);
+  @include mat-chips-theme($iron-app-theme);
+  @include mat-table-theme($iron-app-theme);
+  @include mat-datepicker-theme($iron-app-theme);
+  @include mat-dialog-theme($iron-app-theme);
+  @include mat-divider-theme($iron-app-theme);
+  @include mat-expansion-panel-theme($iron-app-theme);
+  @include mat-form-field-theme($iron-app-theme);
+  @include mat-grid-list-theme($iron-app-theme);
+  @include mat-icon-theme($iron-app-theme);
+  @include mat-input-theme($iron-app-theme);
+  @include mat-list-theme($iron-app-theme);
+  @include mat-menu-theme($iron-app-theme);
+  @include mat-paginator-theme($iron-app-theme);
+  @include mat-progress-bar-theme($iron-app-theme);
+  @include mat-progress-spinner-theme($iron-app-theme);
+  @include mat-radio-theme($iron-app-theme);
+  @include mat-select-theme($iron-app-theme);
+  @include mat-sidenav-theme($iron-app-theme);
+  @include mat-slide-toggle-theme($iron-app-theme);
+  @include mat-slider-theme($iron-app-theme);
+  @include mat-stepper-theme($iron-app-theme);
+  @include mat-sort-theme($iron-app-theme);
+  @include mat-tabs-theme($iron-app-theme);
+  @include mat-toolbar-theme($iron-app-theme);
+  @include mat-tooltip-theme($iron-app-theme);
+  @include mat-tree-theme($iron-app-theme);
+  @include mat-snack-bar-theme($iron-app-theme);
+
+
+  .cdk-overlay-container{
+        z-index: 2060 !important;
+  }
+  .mat-form-field{
+    width: 50%;
+  }
+  .mat-icon-button.icon{
+    width: 23px;
+    height: 23px;
+    line-height: 23px;
+}
+  .mobile-label {
+    display: none;
+}
+  .mat-cell, .mat-header-cell{
+    margin-left: 18px!important;
+  }
+
+
+

@@ -1,0 +1,19 @@
+@mixin custom-form-field($color) {
+    .mat-form-field-appearance-legacy
+  {
+    color: $color;
+    .mat-form-field-label{
+      color: $color;
+    } 
+    .mat-form-field-underline{
+      background-color: $color; 
+    } 
+  }
+  .mat-form-field{
+    &.mat-focused{
+      .mat-form-field-ripple{
+        background-color: $color;
+      }
+    } 
+  }
+}
