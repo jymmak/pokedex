@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from "./material.module";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
@@ -21,7 +21,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule, 
+    FlexLayoutModule,
     // Views
 
     pokeListModule,
@@ -32,6 +33,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RouterModule.forRoot(ROUTES, {
       useHash: false
     })
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+declare var $: any;
 
 @Component({
     selector: 'poke-list',
@@ -11,10 +12,12 @@ import { Router } from '@angular/router';
 })
 
 export class pokeListComponent implements OnInit {
-
-    constructor(private _router: Router) { }
+    public spinner: boolean;
+    constructor(private _router: Router) {
+        this.spinner = false;
+     }
     ngOnInit() {
-
+       
     }
 
 

@@ -1,8 +1,18 @@
-<div id="contenedor">
-  <div class="contenedor-fondo">
-    <p>Aqui estarán tus pokemones</p>
+<div id="contenedor" class="container">
+  <div class="row">
+    <div class="col-9" [ngClass]="{'sk-loading':spinner}">
+      <spinner-basico [show]="spinner"></spinner-basico>
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Favorite food" value="Sushi">
+        </mat-form-field>
+      
+        <mat-form-field class="example-full-width">
+          <textarea matInput placeholder="Leave a comment"></textarea>
+        </mat-form-field>
+      </form>
 
-
+    </div>
 
   </div>
 
