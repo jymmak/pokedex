@@ -1,0 +1,17 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.content {
+  width: 100%;
+  text-align: center;
+  margin-top: 10vh;
+}
+
+.poke_list {
+  width: 90vw;
+  height: 150px;
+  margin-top: 10vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+  margin-bottom: 30vh;
+}

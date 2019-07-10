@@ -1,0 +1,14 @@
+<div class="content">
+        <form>
+                <mat-form-field class="search-form">
+                        <input matInput placeholder="Busca tu pokemón"
+                                type="text">
+                </mat-form-field>
+                <button (click)="consultar()" button="submit" mat-raised-button color="primary">Search</button>
+        </form>
+
+</div>
+
+<div class="poke_list">
+        <app-poke-list-item *ngFor="let pokemonData of pokeList" [pokemonData]="pokemonData"></app-poke-list-item>
+</div>
