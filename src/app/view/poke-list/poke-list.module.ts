@@ -4,7 +4,7 @@ import { pokeListComponent } from "./poke-list.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { SpinnerModule } from 'src/app/components/common/spinner/spinner.module';
 import {MaterialModule} from "../../material.module";
-
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 @NgModule({
     declarations: [pokeListComponent],
@@ -12,7 +12,8 @@ import {MaterialModule} from "../../material.module";
         ReactiveFormsModule,
         FormsModule,
         SpinnerModule,
-        MaterialModule
+        MaterialModule,
+        FlexLayoutModule
     ],
 })
 

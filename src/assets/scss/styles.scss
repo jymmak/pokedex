@@ -3,8 +3,13 @@
 
 @import "_variables.scss";
 @import "_util.scss";
+@import "_grid.scss";
 @import "comun/topnavbar/topnavbar.scss";
 @import "comun/spinner/spinner-inicio.scss";
+
+
+/* view */
+@import "view/pokeList/pokeList.scss";
 
 
 

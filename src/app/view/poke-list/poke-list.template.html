@@ -1,18 +1,36 @@
-<div id="contenedor" class="container">
-  <div class="row">
-    <div class="col-9" [ngClass]="{'sk-loading':spinner}">
-      <spinner-basico [show]="spinner"></spinner-basico>
-      <form class="example-form">
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Favorite food" value="Sushi">
+<div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+
+  <div class="item item-4" fxFlex fxFlexOffset="50px" fxFlexOffset.xs="0">
+
+    <div class="" fxLayout="row" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+
+      <div fxFlex="60%">
+        <mat-form-field class="search-form">
+          <input matInput placeholder="Search Picture" type="text">
         </mat-form-field>
-      
-        <mat-form-field class="example-full-width">
-          <textarea matInput placeholder="Leave a comment"></textarea>
-        </mat-form-field>
-      </form>
+      </div>
+      <div fxFlex="20%">
+        <button button="submit" mat-raised-button color="primary">Search</button>
+
+      </div>
 
     </div>
+    <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+
+      <div fxFlex="20%">
+        <img mat-card-image class="img" src="https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/8V46UZCS0V.jpg">
+      </div>
+      <div fxFlex="20%">
+        <img mat-card-image class="img" src="https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/LTLE4QGRVQ.jpg">
+      </div>
+      <div fxFlex="20%">
+        <img mat-card-image class="img" src="https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/R926LU1YEA.jpg">
+      </div>
+      <div fxFlex="20%">
+        <img mat-card-image class="img" src="https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/U9PP3KXXY2.jpg">
+      </div>
+    </div>
+
 
   </div>
 
