@@ -1,17 +1,67 @@
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
-
-.content {
-  width: 100%;
+.pokemon-container {
+  margin-top: 14px;
   text-align: center;
-  margin-top: 10vh;
+  cursor: pointer;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.poke_list {
-  width: 90vw;
-  height: 150px;
-  margin-top: 10vh;
+.grid-layout {
+  padding: 50px 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 30px;
-  margin-bottom: 30vh;
+  max-width: 100%;
+  grid-gap: 60px;
+  margin: 0 auto;
+  width: 95%;
+  grid-auto-rows: 300px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+  .pokemon-card {
+    width: 215px;
+    height: 289px;
+    background: #bdbdbd;
+    margin: 14px 10px;
+    border-radius: 5px;
+    display: inline-block;
+
+    .mat-card-title {
+      font-size: 22px;
+      display: inline-flex;
+      color: #2b3675;
+      font-weight: bold;
+    }
+
+    .mat-card-image {
+      margin-bottom: 0px;
+    }
+    .id {
+      font-size: 22px;
+      text-align: right;
+      color: #2b3675;
+      float:left;
+    }
+
+    mat-card-content {
+      margin: 0;
+      width: 87%;
+      height: 33px;
+      padding: 8px 0px 0 8px;
+      background-image: url(/assets/base.png) !important;
+      display: block;
+      -webkit-box-pack: center;
+      justify-content: center;
+
+      .types {
+        display: inline-flex;
+        margin: 3px 10px 5px 0px;
+        padding: 3px 4px;
+        text-shadow: black 1px 1px 1px;
+        border-radius: 2px;
+        font-size: 15px;
+        color: #ffffff;
+        font-weight: 500;
+      }
+    }
+  }
 }

@@ -1,30 +1,36 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { PokeListComponent } from './components/poke-list/poke-list.component';
-import { PokeListItemComponent } from './components/poke-list-item/poke-list-item.component';
+
+import { SearchPipe } from './pipes/search.pipe';
+import { TypeFilterPipe } from './pipes/typeFilter.pipe';
+import { AbilitiesFilterPipe } from './pipes/abilitiesFilter.pipe';
+import {HeaderComponent } from './components/header/header.component';
 import { SharedModule } from './shared/shared.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PokeListComponent } from './components/poke-list/poke-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     PokeListComponent,
-    PokeListItemComponent
+    HeaderComponent,
+    SearchPipe,
+    TypeFilterPipe,
+    AbilitiesFilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     SharedModule,
-    BrowserAnimationsModule, 
-    AppRoutingModule,
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

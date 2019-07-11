@@ -1,6 +1,7 @@
+/* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { PokeListComponent } from './poke-list.component';
+
 
 describe('PokeListComponent', () => {
   let component: PokeListComponent;

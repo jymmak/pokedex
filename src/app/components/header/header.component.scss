@@ -1,11 +1,60 @@
-header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.mat-toolbar {
+  background: #56ab2f; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #a8e063, #56ab2f); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #a8e063,
+    #56ab2f
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  top: 0;
+  z-index: 1000;
+  justify-content: center;
 
-    height: 7vh;
-    background-color: white;
- 
-    color: #b52e31;
+  .pokemon-logo {
+    height: 50px;
+    width: 100px;
+  }
 
+  .mat-icon-button,
+  .mat-icon {
+    height: 35px;
+    width: 35px;
+    line-height: 35px;
+  }
+
+  .search-box {
+    margin-right: 10px;
+    .search-input {
+      font-size: 16px;
+      font-weight: bold;
+      margin-left: 50px;
+      padding: 2px 5px 2px 20px;
+      border: none;
+      height: 30px;
+      outline: none !important;
+      background: white;
+    }
+    .close-button {
+      margin-left: -35px;
+    }
+  }
+
+  .mat-select {
+    text-transform: capitalize;
+
+    .additional-selection {
+      text-transform: lowercase;
+      opacity: 0.75;
+      font-size: 0.75em;
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .mat-toolbar {
+    display: table;
+    padding: 20px;
+    text-align: center;
+  }
 }

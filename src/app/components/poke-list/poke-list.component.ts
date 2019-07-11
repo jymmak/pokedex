@@ -1,33 +1,99 @@
-import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
-import {PokeListService} from '../../services/poke-list.service';
-import {Pokemon} from '../../models/Pokemon';
-import { HttpClient } from '@angular/common/http';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { PokeAPI, PokemonDetails, Results, TYPE_COLOURS } from 'src/app/interfaces';
+import { PokemonService } from 'src/app/services/pokemon.service';
+
 @Component({
   selector: 'app-poke-list',
   templateUrl: './poke-list.component.html',
   styleUrls: ['./poke-list.component.scss']
 })
 export class PokeListComponent implements OnInit {
-  pokeList:Pokemon[] = [];
+  @Output() exportPokemons = new EventEmitter();
+  pokemonsLoaded: boolean;
+  pokemons: PokeAPI;
+  query: string;
+  abilityFilters: Array<string>;
+  typeFilters: string;
 
-  constructor(private pokeListService: PokeListService, private http: HttpClient) { }
-
-  getPokemons():void{
-    this.pokeListService.getPokemons().then(data=>
-      data.map(url=>{
-        this.http.get(url).subscribe(data=>{
-            this.pokeList = [...this.pokeList,
-            {name: data['forms'][0].name.charAt(0).toUpperCase() + data['forms'][0].name.slice(1),
-            type: data['types'][0].type.name,
-            spriteUrl: data['sprites'].front_default
-          }]
-        })
-      })
-  );
+  @Input() set search(newSearch: string) {
+    if (newSearch !== this.query) {
+      this.query = newSearch;
+    }
   }
 
-  ngOnInit() {
+  @Input() set typeFilter(type: string) {
+    if (type !== this.typeFilter) {
+      this.typeFilters = type;
+    }
+  }
+
+  @Input() set abilityFilter(abilities: Array<string>) {
+    if (abilities !== this.abilityFilters) {
+      this.abilityFilters = abilities;
+    }
+  }
+
+  constructor(private pokemonService: PokemonService) {}
+
+  ngOnInit(): void {
+    this.pokemonsLoaded = false;
     this.getPokemons();
   }
 
+  
+  getPokemons(): void {
+    this.pokemonService.getPokemon().subscribe((data: PokeAPI) => {
+      this.pokemons = data;
+
+      if (this.pokemons.results && this.pokemons.results.length) {
+        // get pokemon details for every pokemon
+        this.pokemons.results.forEach(pokemon => {
+          // set pokemon id
+          pokemon.id = pokemon.url.split('/')[
+            pokemon.url.split('/').length - 2
+          ];
+
+          this.getPokemonDetails(pokemon);
+          this.getPokemonSpeciesDetails(pokemon);
+        });
+      }
+    });
+  }
+
+  /* Gets and sets a pokemons details  */
+  getPokemonDetails(pokemon: Results): void {
+    this.pokemonService
+      .getPokemonDetails(pokemon.name)
+      .subscribe((details: PokemonDetails) => {
+        pokemon.details = details;
+        // when last pokemon details have been loaded
+        // send pokemons to header component
+        if (pokemon.id === '151') {
+          this.pokemonsLoaded = true;
+          this.exportPokemons.emit(this.pokemons.results);
+        }
+      });
+  }
+
+
+  getPokemonSpeciesDetails(pokemon: Results): void {
+    this.pokemonService
+      .getPokemonSpecies(pokemon.name)
+      .subscribe((species: any) => {
+        const entries = species.flavor_text_entries;
+        if (entries) {
+          entries.some(flavor => {
+            if (flavor.language.name === 'en') {
+              pokemon.description = flavor.flavor_text;
+            }
+          });
+        }
+      });
+  }
+
+  _getTypeColour(type: string): string {
+    if (type) {
+      return '#' + TYPE_COLOURS[type];
+    }
+  }
 }

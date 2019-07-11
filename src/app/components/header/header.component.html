@@ -1,5 +1,15 @@
-<header>
+<div class="container">
 
-  <h1> {{title}}</h1>
+  <mat-toolbar>
+    <img class="pokemon-logo" src="./assets/logo.png" />
+    <div class="search-box">
+      <input matInput class="search-input" type="text" [(ngModel)]="search" (ngModelChange)="searchEvent()"
+        placeholder="Search your pokemon" />
+      <button mat-button class="close-button" *ngIf="search" matSuffix mat-icon-button aria-label="Clear"
+        (click)="searchEvent('')">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
 
-</header>
+  </mat-toolbar>
+</div>
