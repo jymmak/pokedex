@@ -1,27 +1,21 @@
-# Pokedex
+<h1 align="center">
+   Pokedex
+  <br>
+</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.0.
 
-## Development server
+## API Rest con React y Redux
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+![PokeAPI](https://user-images.githubusercontent.com/32302955/95253302-d22bf980-07e3-11eb-9b36-8fae69ba850e.png)
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+![PokeAPI](https://user-images.githubusercontent.com/32302955/95253326-da843480-07e3-11eb-8d56-b60e294cd0b5.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![PokeAPI](https://user-images.githubusercontent.com/32302955/95253336-dbb56180-07e3-11eb-91c9-a3773e8b7531.png)
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+![PokeAPI](https://user-images.githubusercontent.com/32302955/95253348-dce68e80-07e3-11eb-8558-f5c2721e75c9.png)
